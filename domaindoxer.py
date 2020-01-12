@@ -20,7 +20,7 @@ pastebin_leak_array = []
 
 auth_leak_search1 = search_term1 + ' AND "haveibeenpwned|sql|user|login|username|id|uid|password|passwd|pw leak|leaked|dump|dox|doxed|pwnd|pwned|pwn3d|pii|phi" | site:http://s3.amazonaws.com ' + arg1
 doc_leak_search1 = ' AND "ext:doc | ext:docx | ext:xls | ext:xlsx | ext:pdf | ext:ppt | ext:pptx | ext:txt | ext:vsd | ext:vsdx | ext:sql | ext:csv"'
-internal_leak_search1 = ' AND "secret|private|draft||confidential|proprietary|attorney|privileged|internal|limited|controlled"'
+internal_leak_search1 = ' AND "secret|private|draft|confidential|proprietary|attorney|privileged|internal|limited|controlled"'
 code_leak_search1 = ' site:googlecode.com | site:code.google.com | site:github.com | site:devshed.com | site:stackoverflow.com | site:superuser.com | site:grokbase.com | site:snipplr.com | site:searchcode.com | site:codeplex.com | site:codepen.io | site:workingbase.com | site:codeverge.com'
 osint_leak_search1 = ' facebook | linkedin | myspace | twitter | instagram | snapchat | vk | tiktok | alexa | crunchbase | similarweb | domainbigdata | whois '
 pastebin_search1 = ' site:pastebin.com'
