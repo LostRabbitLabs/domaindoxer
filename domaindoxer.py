@@ -17,14 +17,15 @@ internal_leak_array = []
 code_leak_array = []
 osint_leak_array = []
 pastebin_leak_array = []
+malware_array = []
 
 auth_leak_search1 = search_term1 + ' AND "haveibeenpwned|sql|user|login|username|id|uid|password|passwd|pw leak|leaked|dump|dox|doxed|pwnd|pwned|pwn3d|pii|phi" | site:http://s3.amazonaws.com ' + arg1
 doc_leak_search1 = ' AND "ext:doc | ext:docx | ext:xls | ext:xlsx | ext:pdf | ext:ppt | ext:pptx | ext:txt | ext:vsd | ext:vsdx | ext:sql | ext:csv"'
 internal_leak_search1 = ' AND "secret|private|draft|confidential|proprietary|attorney|privileged|internal|limited|controlled"'
 code_leak_search1 = ' site:googlecode.com | site:code.google.com | site:github.com | site:devshed.com | site:stackoverflow.com | site:superuser.com | site:grokbase.com | site:snipplr.com | site:searchcode.com | site:codeplex.com | site:codepen.io | site:workingbase.com | site:codeverge.com'
-osint_leak_search1 = ' facebook | linkedin | myspace | twitter | instagram | snapchat | vk | tiktok | alexa | crunchbase | similarweb | domainbigdata | whois '
-pastebin_search1 = ' site:pastebin.com'
-
+osint_leak_search1 = ' AND facebook | linkedin | myspace | twitter | instagram | snapchat | vk | tiktok | alexa | crunchbase | similarweb | domainbigdata | whois '
+pastebin_search1 = ' AND site:pastebin.com OR site:ghostbin.com OR site:0bin.net OR site:PasteFS.com OR site:pastiebin.com OR site:pastie.org'
+malware_search1 =  'AND site:otx.alienvault.com OR site:any.run OR site:www.hybrid-analysis.com OR site:www.joesandbox.com'
 
 print ("\n\n    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNd:kMM  ")
 print ("    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNO:. oWM  ")
@@ -125,7 +126,7 @@ print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
 
 
 try:
-    search_term_osint = search_term1 + osint_leak_search1
+    search_term_osint = arg1 + osint_leak_search1
     for url in search(search_term_osint, stop=80):
         osint_leak_array.append(url)
 except:
@@ -141,7 +142,7 @@ print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
 
 
 try:
-    search_term_pastebin = search_term1 + pastebin_search1
+    search_term_pastebin = arg1 + pastebin_search1
     for url in search(search_term_pastebin, stop=20):
         pastebin_leak_array.append(url)
 except:
@@ -150,6 +151,21 @@ except:
 
 print ("PASTEBIN DATA LEAKAGE for " + arg1 +":")
 for result in pastebin_leak_array:
+    result = result.split("?sa=X")[0]
+    print (result + "\n")
+
+print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+
+try:
+    search_term_malware = arg1 + malware_search1
+    for url in search(search_term_malware, stop=60):
+        malware_array.append(url)
+except:
+    pass
+    print ("malware_array error")
+
+print ("MALWARE DATA LEAKAGE for " + arg1 +":")
+for result in malware_array:
     result = result.split("?sa=X")[0]
     print (result + "\n")
 
