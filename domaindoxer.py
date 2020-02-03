@@ -25,7 +25,7 @@ internal_leak_search1 = ' AND "secret|private|draft|confidential|proprietary|att
 code_leak_search1 = ' site:googlecode.com | site:code.google.com | site:github.com | site:devshed.com | site:stackoverflow.com | site:superuser.com | site:grokbase.com | site:snipplr.com | site:searchcode.com | site:codeplex.com | site:codepen.io | site:workingbase.com | site:codeverge.com'
 osint_leak_search1 = ' AND facebook | linkedin | myspace | twitter | instagram | snapchat | vk | tiktok | alexa | crunchbase | similarweb | domainbigdata | whois '
 pastebin_search1 = ' AND site:pastebin.com OR site:ghostbin.com OR site:0bin.net OR site:PasteFS.com OR site:pastiebin.com OR site:pastie.org'
-malware_search1 =  'AND site:otx.alienvault.com OR site:any.run OR site:www.hybrid-analysis.com OR site:www.joesandbox.com'
+malware_search1 =  'AND site:otx.alienvault.com OR site:any.run OR site:www.hybrid-analysis.com OR site:www.joesandbox.com OR site:urlscan.io'
 
 print ("\n\n    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNd:kMM  ")
 print ("    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNO:. oWM  ")
